@@ -5,10 +5,29 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node server.js",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "ajv": "^6.6.1",
+    "axios": "^0.18.0",
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "joi": "^14.3.0",
+    "jsonwebtoken": "^8.4.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.7",
+    "pg-promise": "^8.5.2",
+    "sequelize": "^4.41.2",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vue-youtube-embed": "^2.2.1",
+    "vuex": "^3.0.1",
+    "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
@@ -18,6 +37,9 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
     "vue-template-compiler": "^2.5.17"
+  },
+  "engines": {
+    "node": "10.13.0"
   },
   "eslintConfig": {
     "root": true,
