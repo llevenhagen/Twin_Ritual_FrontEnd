@@ -6,8 +6,8 @@ module.exports = {
     try {
       const cart = await models.cart.findOne({
         where: {
-          merchId: req.query.merchId,
-          userId: req.query.userId
+          merch_id: req.query.merch_id,
+          user_id: req.query.user_id
         }
       })
       res.send(cart || null)
@@ -19,18 +19,18 @@ module.exports = {
   },
   async cart (req, res) {
     console.log(req.params, 'YOU ARE LOOKING AT THE CARRRRRRRRTTTTT')
-    let userId = req.params.userId
+    let user_id = req.params.user_id
     try {
       let cart = await models.cart.findAll({
         where: {
-          userId: userId
+          user_id: user_id
         }
       })
-      console.log(cart[0].merchId)
+      console.log(cart[0].merch_id)
       let cartArray = []
       let objectArray = []
       for (let i = 0; i < cart.length; i++) {
-        cartArray.push(cart[i].merchId)
+        cartArray.push(cart[i].merch_id)
       }
       for (let i = 0; i < cartArray.length; i++) {
         let item = await models.merch.findById(cartArray[i])
@@ -45,12 +45,12 @@ module.exports = {
     }
   },
   async post (req, res) {
-    console.log(req.body.params.merchId)
+    console.log(req.body.params.merch_id)
     try {
       const item = req.body.params
       const newItem = await models.cart.create({
-        merchId: item.merchId,
-        userId: item.userId
+        merch_id: item.merch_id,
+        user_id: item.user_id
       })
       res.send(newItem)
     } catch (err) {
@@ -63,13 +63,13 @@ module.exports = {
     console.log(req.params)
     try {
       const itemId = req.params.itemId
-      const userId = req.params.userId
+      const user_id = req.params.user_id
       // const item = models.cart.findById(itemId)
       // console.log(item)
       await models.cart.destroy({
         where: {
-          merchId: itemId,
-          userId: userId
+          merch_id: itemId,
+          user_id: user_id
         }
       })
       res.send(req.params)

@@ -29,9 +29,9 @@
         In Stock:
         <input
         type="checkbox"
-        name="inStock"
+        name="in_stock"
         autocomplete="off"
-        v-model="item.inStock"/>
+        v-model="item.in_stock"/>
         <button @click="save">
         Save Item</button>
       </form>
@@ -52,7 +52,7 @@ export default {
         image: null,
         price: null,
         description: null,
-        inStock: null
+        in_stock: null
       }
     }
   },

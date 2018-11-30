@@ -35,9 +35,9 @@ module.exports = (app) => {
   app.post('/cart',
     CartController.post)
 
-  app.delete('/cart/:userId/:itemId',
+  app.delete('/cart/:user_id/:itemId',
     CartController.delete)
 
-  app.get('/cart/:userId',
+  app.get('/cart/:user_id',
     CartController.cart)
 }

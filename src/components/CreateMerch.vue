@@ -30,9 +30,9 @@
         In Stock:
         <input
         type="checkbox"
-        name="inStock"
+        name="in_stock"
         autocomplete="off"
-        v-model="merch.inStock"/>
+        v-model="merch.in_stock"/>
         <button @click="create">
         Add Merch</button>
       </form>
@@ -52,7 +52,7 @@ export default {
         image: null,
         price: null,
         description: null,
-        inStock: null
+        in_stock: null
       }
     }
   },

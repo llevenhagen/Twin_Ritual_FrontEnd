@@ -24,8 +24,8 @@
             }
             })">{{item.name}}</h3>
         <h4>${{item.price}}</h4>
-        <h3 class="in-stock" v-if="item.inStock">In Stock</h3>
-        <h3 class="in-stock" v-if="!item.inStock">Out of Stock</h3>
+        <h3 class="in-stock" v-if="item.in_stock">In Stock</h3>
+        <h3 class="in-stock" v-if="!item.in_stock">Out of Stock</h3>
     </div>
   </div>
   </panel>

@@ -4,8 +4,8 @@
       <img :src="item.image"/>
       <h1>{{item.name}}</h1>
       <h2>${{item.price}}</h2>
-      <h3 class="in-stock" v-if="item.inStock">In Stock</h3>
-      <h3 class="in-stock" v-if="!item.inStock">Out of Stock</h3>
+      <h3 class="in-stock" v-if="item.in_stock">In Stock</h3>
+      <h3 class="in-stock" v-if="!item.in_stock">Out of Stock</h3>
       <h3>{{item.description}}</h3>
       <button v-if="isUserLoggedIn && !inCart"
       @click="addToCart">Add To Cart</button>
@@ -41,8 +41,8 @@ export default {
     this.item = (await MerchService.show(itemId)).data
     console.log(itemId)
     this.inCart = (await CartService.index({
-      merchId: itemId,
-      userId: this.$store.state.user.id
+      merch_id: itemId,
+      user_id: this.$store.state.user.id
     })).data
     // console.log(isUserLoggedIn, this.isInCart)
   },
@@ -53,8 +53,8 @@ export default {
       console.log(itemId, this.item)
       try {
         this.inCart = (await CartService.post({
-          merchId: itemId,
-          userId: this.$store.state.user.id
+          merch_id: itemId,
+          user_id: this.$store.state.user.id
         })).data
       } catch (err) {
         console.log(err)
@@ -62,10 +62,10 @@ export default {
     },
     async removeFromCart () {
       const itemId = this.$store.state.route.params.itemId
-      const userId = this.$store.state.user.id
-      console.log(itemId, userId)
+      const user_id = this.$store.state.user.id
+      console.log(itemId, user_id)
       try {
-        await CartService.delete(itemId, userId)
+        await CartService.delete(itemId, user_id)
         this.inCart = null
       } catch (err) {
         console.log(err)

@@ -6,18 +6,18 @@ export default {
       params: item
     })
   },
-  cart (userId) {
-    return Api().get(`cart/${userId}`, userId)
+  cart (user_id) {
+    return Api().get(`cart/${user_id}`, user_id)
   },
   post (item) {
     return Api().post('cart', {
       params: item
     })
   },
-  delete (itemId, userId) {
-    return Api().delete(`cart/${userId}/${itemId}`, {
+  delete (itemId, user_id) {
+    return Api().delete(`cart/${user_id}/${itemId}`, {
       itemId: itemId,
-      userId: userId
+      user_id: user_id
     })
   }
 }
