@@ -39,6 +39,7 @@ export default {
     return {
       email: '',
       password: '',
+      admin: null,
       error: null
     }
   },
