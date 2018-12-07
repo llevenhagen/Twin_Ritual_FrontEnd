@@ -17,11 +17,11 @@
         autocomplete="new-password"
         placeholder="password"/>
         <br>
-        <input
+        <!-- <input
         type="checkbox"
         name="admin"
         v-model="admin"/>
-        <div class="error" v-html="error"/>
+        <div class="error" v-html="error"/> -->
         <br>
         <button
         @click="register">
@@ -39,7 +39,7 @@ export default {
     return {
       email: '',
       password: '',
-      admin: null,
+      admin: false,
       error: null
     }
   },
