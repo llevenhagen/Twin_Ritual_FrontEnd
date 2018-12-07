@@ -2,7 +2,7 @@
 # TwinRitual
 
 ### Live Link: https://mysterious-brushlands-75378.herokuapp.com/
-
+Back End code can be found here: https://github.com/llevenhagen/Twin-Ritual-BackEnd
 ## About Twin Ritual Project:
 
 This site was developed to serve as a merch store for the band Twin Ritual, out of San Diego, CA.
