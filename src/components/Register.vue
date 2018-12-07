@@ -17,6 +17,10 @@
         autocomplete="new-password"
         placeholder="password"/>
         <br>
+        <input
+        type="checkbox"
+        name="admin"
+        v-model="admin"/>
         <div class="error" v-html="error"/>
         <br>
         <button
@@ -45,6 +49,7 @@ export default {
         const response = await AuthenticationService.register({
           email: this.email,
           password: this.password
+          admin: this.admin
         })
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
