@@ -39,9 +39,9 @@ export default {
   },
   async mounted () {
     this.user = this.$store.state.user
-    const user_id = this.user.id
-    console.log(user_id)
-    this.cart = (await CartService.cart(user_id)).data
+    const userId = this.user.id
+    console.log(userId)
+    this.cart = (await CartService.cart(userId)).data
     console.log(this.cart[0].id)
   },
   methods: {

@@ -6,12 +6,5 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     in_stock: DataTypes.BOOLEAN
   })
-  merch.associate = function (models) {
-    merch.belongsTo(models.user, {
-      through: 'usercart',
-      as: 'items',
-      foreignKey: 'itemId'
-    })
-  }
   return merch
 }

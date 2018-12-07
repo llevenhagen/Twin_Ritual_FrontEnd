@@ -41,8 +41,8 @@ export default {
     this.item = (await MerchService.show(itemId)).data
     console.log(itemId)
     this.inCart = (await CartService.index({
-      merch_id: itemId,
-      user_id: this.$store.state.user.id
+      merchId: itemId,
+      userId: this.$store.state.user.id
     })).data
     // console.log(isUserLoggedIn, this.isInCart)
   },
@@ -53,8 +53,8 @@ export default {
       console.log(itemId, this.item)
       try {
         this.inCart = (await CartService.post({
-          merch_id: itemId,
-          user_id: this.$store.state.user.id
+          merchId: itemId,
+          userId: this.$store.state.user.id
         })).data
       } catch (err) {
         console.log(err)
@@ -62,10 +62,10 @@ export default {
     },
     async removeFromCart () {
       const itemId = this.$store.state.route.params.itemId
-      const user_id = this.$store.state.user.id
-      console.log(itemId, user_id)
+      const userId = this.$store.state.user.id
+      console.log(itemId, userId)
       try {
-        await CartService.delete(itemId, user_id)
+        await CartService.delete(itemId, userId)
         this.inCart = null
       } catch (err) {
         console.log(err)
