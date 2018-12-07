@@ -48,7 +48,7 @@ export default {
         event.preventDefault()
         const response = await AuthenticationService.register({
           email: this.email,
-          password: this.password
+          password: this.password,
           admin: this.admin
         })
         this.$store.dispatch('setToken', response.data.token)
